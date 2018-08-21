@@ -247,6 +247,7 @@ function loadFeedItems(prevFeedItemCount, numItems) {
 function setMarketFilter(selector, active) {
   var classes = casper.getElementAttribute(selector, "class");
   var isMarketActive = classes.split(" ").indexOf("active") == 2;
+  // checking if current page filter is active
   if (isMarketActive != active) {
     casper.click(selector);
     casper.wait(1000);
